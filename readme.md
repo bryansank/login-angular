@@ -10,6 +10,7 @@ _Para iniciar estre proyecto, tan solo sigue paso a paso las instrucciones_
 
 Instala MongoDB en tu sistema Windows/Linux/Mac desde su pagina oficial usando Community Server.
 -https://www.mongodb.com/try/download
+( agregala en tus variables de entorno, ademas, en tu disco, crea una carpeta llamada data, dentro otra llamada db)
 
 : npm install
 : mongod
@@ -19,6 +20,7 @@ Instalar ademas, algun software para hacer pruebas POST/GET como postMan o Insom
 
 { FRONT-END }
 
+npm install
 ng serve
 
 { Rutas }
