@@ -1,18 +1,45 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { EntrarComponent } from './components/entrar/entrar.component';
+import { RegistrarComponent } from './components/registrar/registrar.component';
+import { EmpresasComponent } from './components/empresas/empresas.component';
+import { MetadataComponent } from './components/metadata/metadata.component';
+
+//Para usar HTTP entre los servicios importamos... Ademas HTTP_inter...
+import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+
+//importamos el servicio token
+import { TokenGetService } from './services/token-get.service';
+
+//Guard
+import { AuthGuard } from './auth.guard'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EntrarComponent,
+    RegistrarComponent,
+    EmpresasComponent,
+    MetadataComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    {
+      provide : HTTP_INTERCEPTORS,
+      useClass : TokenGetService,
+      multi : true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
