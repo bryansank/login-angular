@@ -56,23 +56,49 @@ router.get('/empresas', (req, res) => {
         {
             _id : 1,
             name: "Peregrina",
-            descrip: "Cervezas"
+            descrip: "¡Disfruta de catas, visitas a nuestra planta, entradas a eventos, descuentos en tus compras, promociones, concursos y muchas sorpresas más!",
+            url : "https://www.peregrinabirra.com/"
         },
         {
             _id : 2,
-            name: "Conectium",
-            descrip: "Desarrolladora"
+            name: "Andromeda",
+            descrip: "Somos un grupo de inversionistas enfocados en el crecimiento de proyectos con propósito. ",
+            url : "https://www.andromedaventures.net/"
         },
         {
             _id : 3,
             name: "Ekiipago",
-            descrip: "Pagos moviles"
+            descrip: "En Ekiipago estamos liderando la transformación de los pagos digitales a través de innovaciones disruptivas que potencian el mercado digital del ahora.",
+            url : "https://enviodedinero.ekiipago.com/"
         }
     ]);
 });
 
 router.get('/metadata', verifyToken, (req, res) => {
-    res.send(req.userObjAuthorizate);
+    //res.send(req.userObjAuthorizate);
+    //res.send(req.);
+    res.json([
+        {
+            _id : 1,
+            nombre: "Bryan",
+            espec: "Frontend"
+        },
+        {
+            _id : 2,
+            nombre: "Carmen",
+            espec: "Frontend"
+        },
+        {
+            _id : 3,
+            nombre: "Isacc",
+            espec: "Backend"
+        },
+        {
+            _id : 4,
+            nombre: "Key",
+            espec: "Full-Stack"
+        }
+    ]);
 });
 
 function verifyToken(req, res, next){

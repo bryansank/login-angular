@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmpresasService } from "../../services/empresas.service";
 
 @Component({
   selector: 'app-metadata',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MetadataComponent implements OnInit {
 
-  constructor() { }
+  metadataArray = [];
+
+  constructor( private empresasAndMetadata : EmpresasService) { }
 
   ngOnInit(): void {
+    this.empresasAndMetadata.getMetadata().subscribe(
+      res => {
+        //console.log(JSON.stringify(res));
+        this.metadataArray = res;
+        
+      },
+      err=> {
+        console.log(err);
+      }
+    )
   }
 
 }

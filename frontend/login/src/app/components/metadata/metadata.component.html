@@ -1,1 +1,12 @@
-<p>metadata works!</p>
+<div class="container">
+    <div class="card" style="margin-top:20px;" *ngFor="let data of metadataArray">
+        <div class="card-header" style="background: darkgray;">
+            Empleado
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                {{data._id}} : {{data.nombre}} {{data.espec}} : {{data.descrip}}
+            </div>
+        </div>
+    </div>
+</div>
