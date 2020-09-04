@@ -47,6 +47,7 @@ _Pasos usados por mi, a la hora de desarrollar el backend de este proyecto_
 { FRONT-END }
 
 * ng new login --routing
+* cdn en html principal con bootstrap
 
 ###¿COMO LUCE?
 
