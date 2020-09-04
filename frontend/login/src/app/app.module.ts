@@ -18,6 +18,12 @@ import { TokenGetService } from './services/token-get.service';
 //Guard
 import { AuthGuard } from './auth.guard'
 
+//insert Notifications
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+ 
+import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +36,10 @@ import { AuthGuard } from './auth.guard'
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
   ],
   providers: [
     AuthGuard,
