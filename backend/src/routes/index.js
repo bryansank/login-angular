@@ -9,18 +9,27 @@ router.get('/', (req, res) => { res.send('Pagina Inicial de /API.')} );
 
 router.post('/registrar', async (req, res) => { 
     
-    const { email, password } = req.body;
+    const email = req.body.email;
+    const password = req.body.password;
 
-    const newUser = new UserModel({email: email, password : password});
+    const validate = ValidateEmail(email);
 
-    await newUser.save();
+    if(validate){
+        res.status(401).send("Email Existente");
+    }else{
 
-    const token = jsonWebT.sign(
-        { _id : newUser._id },
-        'variableEntorno'
-    );
+        const newUser = new UserModel({email: email, password : password});
 
-    res.status(200).json({token});
+        await newUser.save();
+
+        const token = jsonWebT.sign(
+            { _id : newUser._id },
+            'variableEntorno'
+        );
+
+        res.status(200).json({token});
+    }   
+    
 } );
 
 router.post('/entrar', async (req, res) => {
@@ -85,5 +94,17 @@ function verifyToken(req, res, next){
 
     next();
 }
+
+function ValidateEmail(email){
+
+    if(email.match(/[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}/))
+    {   
+        return true;
+    }else{
+        return false;
+    }
+}
+
+
 
 module.exports = router;

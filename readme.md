@@ -15,7 +15,17 @@ Instala MongoDB en tu sistema Windows/Linux/Mac desde su pagina oficial usando C
 : mongod
 (otra terminal): npm run nodenow
 
-Instalar ademas, algun software para hacer pruebas POST/GET como postMan o Insomnia. 
+Instalar ademas, algun software para hacer pruebas POST/GET como postMan o Insomnia.
+
+{ FRONT-END }
+
+ng serve
+
+{ Rutas }
+/registrar
+/entrar
+/empresas
+/metadata
 
 ### Requirements 📋
 
@@ -31,6 +41,10 @@ npm install nodemon -D
 //use NOMBRE_BASE_DE_DATOS
 //show collections
 //db.users.find().pretty()
+
+{ FRONT-END }
+
+ng new login --routing
 
 ###¿COMO LUCE?
 
