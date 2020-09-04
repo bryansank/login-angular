@@ -51,7 +51,8 @@ _Pasos usados por mi, a la hora de desarrollar el backend de este proyecto_
 
 ###¿COMO LUCE?
 
-![Uploading Andromeda - Google Chrome.jpg…]()
+![Andromeda - Google Chrome](https://user-images.githubusercontent.com/52433472/92290762-3efd5c80-eee3-11ea-9db0-5397fb4d4e82.jpg)
+
 
 ## authors ✒️
 
